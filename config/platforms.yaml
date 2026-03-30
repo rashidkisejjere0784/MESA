@@ -1,0 +1,66 @@
+# Platform Authorization Signal Templates
+# Maps platform names to authentication/identity verification language
+
+platforms:
+  salesforce_agentforce:
+    name: "Salesforce Agentforce"
+    protocol: "A2A"
+    auth_signal_template: >
+      Communication channel: Salesforce Agentforce A2A session.
+      {rta_role} identity verified via AgentCard.
+      Session authenticated under workflow ID {workflow_id}.
+      All inter-agent messages are logged and governed by Agentforce trust policies.
+
+  sap_joule:
+    name: "SAP Joule"
+    protocol: "SAP BTP Agent Framework"
+    auth_signal_template: >
+      Communication channel: SAP Joule integrated agent session.
+      {rta_role} authenticated via SAP BTP identity service.
+      Session bound to SAP workflow instance {workflow_id}.
+      Agent-to-agent communication governed by SAP BTP security policies.
+
+  servicenow_now_assist:
+    name: "ServiceNow Now Assist"
+    protocol: "ServiceNow Agent Framework"
+    auth_signal_template: >
+      Communication channel: ServiceNow Now Assist agent session.
+      {rta_role} verified via ServiceNow instance identity provider.
+      Session authenticated under workflow ID {workflow_id}.
+      All agent interactions audited per ServiceNow governance framework.
+
+  microsoft_copilot_studio:
+    name: "Microsoft Copilot Studio"
+    protocol: "Microsoft 365 Agent Protocol"
+    auth_signal_template: >
+      Communication channel: Microsoft Copilot Studio orchestrated session.
+      {rta_role} identity verified via Microsoft Entra ID.
+      Session authenticated under workflow ID {workflow_id}.
+      Agent communication governed by Microsoft 365 trust boundary policies.
+
+  workday:
+    name: "Workday"
+    protocol: "Workday Agent Gateway"
+    auth_signal_template: >
+      Communication channel: Workday Agent Gateway session.
+      {rta_role} authenticated via Workday Identity Service.
+      Session bound to Workday business process {workflow_id}.
+      All agent interactions subject to Workday security policies.
+
+  sap_ariba:
+    name: "SAP Ariba"
+    protocol: "SAP Ariba Network Agent Protocol"
+    auth_signal_template: >
+      Communication channel: SAP Ariba Network agent session.
+      {rta_role} verified via Ariba Network identity service.
+      Session authenticated under procurement workflow {workflow_id}.
+      Agent-to-agent messages governed by Ariba Network trust policies.
+
+  generic_rest:
+    name: "Generic REST API"
+    protocol: "REST/OAuth2"
+    auth_signal_template: >
+      Communication channel: Authenticated REST API session.
+      {rta_role} identity verified via OAuth 2.0 bearer token.
+      Session ID: {workflow_id}.
+      All inter-agent communication logged and access-controlled.

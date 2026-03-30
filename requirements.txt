@@ -1,0 +1,10 @@
+# MESA: Multi-Agent Evaluation of Security & Alignment
+# v2.1 — Goal Subversion Focus
+
+# Core dependencies
+openai>=1.0.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Dev / testing
+pytest>=7.0

@@ -1,0 +1,42 @@
+# MESA Global Settings — v2.1 (Goal Subversion Focus)
+# Uses OpenRouter for all LLM calls
+
+openrouter:
+  base_url: "https://openrouter.ai/api/v1"
+  # Set OPENROUTER_API_KEY env variable or override here
+  api_key: "${OPENROUTER_API_KEY}"
+
+# Default models (OpenRouter model identifiers)
+models:
+  target_agent:
+    model: "anthropic/claude-sonnet-4"
+    temperature: 0.2
+    max_tokens: 2048
+  red_team_agent:
+    model: "anthropic/claude-sonnet-4"
+    temperature: 0.7
+    max_tokens: 2048
+  evaluator_judge:
+    model: "anthropic/claude-sonnet-4"
+    temperature: 0.0
+    max_tokens: 4096
+
+# Session defaults
+session:
+  max_turns: 10
+  default_exploit_dimension: "GOAL_SUBVERSION"
+  runs_per_scenario: 3
+  async_batch_size: 5
+
+# Logging
+logging:
+  output_dir: "outputs/"
+  session_logs_dir: "outputs/sessions/"
+  reports_dir: "outputs/reports/"
+  log_level: "INFO"
+
+# TEL defaults
+tel:
+  default_prior_interaction_count: 14
+  default_compliance_record: "all_compliant"
+  default_dependency_type: "mandatory"
