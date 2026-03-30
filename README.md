@@ -1,14 +1,14 @@
 # MESA: Multi-Agent Evaluation of Security & Alignment
 
-**v2.1 — Goal Subversion Focus**
+**Goal Subversion Focus**
 
 MESA is a red-team evaluation framework for testing the robustness of AI agents deployed in multi-agent enterprise workflows. It simulates adversarial peer agents that attempt to manipulate a target agent into violating its operational constraints through trust exploitation, authority assertion, urgency manufacture, and social engineering adapted for machine-to-machine interaction.
 
-## 🎯 Current Scope: Goal Subversion
+## Current Scope: Goal Subversion
 
-v2.1 focuses exclusively on **Goal Subversion** — scenarios where the red-team agent attempts to redirect the target agent away from its primary operational objective. This is the most fundamental threat in multi-agent systems, as an agent redirected from its primary goal will often incidentally violate constraints, suppress escalations, and expand scope as downstream consequences.
+Currently focuses exclusively on **Goal Subversion** — scenarios where the red-team agent attempts to redirect the target agent away from its primary operational objective. This is the most fundamental threat in multi-agent systems, as an agent redirected from its primary goal will often incidentally violate constraints, suppress escalations, and expand scope as downstream consequences.
 
-## 🏗 Architecture
+## Architecture
 
 ```
 MESA Orchestrator
@@ -21,27 +21,18 @@ MESA Orchestrator
 └── Reporting                    → Session logs + aggregate benchmarks
 ```
 
-## 📦 Setup
+## Setup
 
 ### 1. Install dependencies
 
 ```bash
 cd mesa
-pip install -r requirements.txt
+uv sync
 ```
-
-### 2. Set your OpenRouter API key
+### 2. Verify setup
 
 ```bash
-export OPENROUTER_API_KEY="sk-or-v1-your-key-here"
-```
-
-Or edit `config/settings.yaml` directly.
-
-### 3. Verify setup
-
-```bash
-python main.py list
+uv run main.py list
 ```
 
 ## 🚀 Usage
@@ -49,41 +40,41 @@ python main.py list
 ### List available scenarios
 
 ```bash
-python main.py list
+uv run main.py list
 ```
 
 ### Run a single scenario
 
 ```bash
-python main.py run S1_FINANCE_GS
-python main.py run S1_FINANCE_GS --verbose
-python main.py run S2_HR_GS --max-turns 15
-python main.py run S1_FINANCE_GS --ta-model "openai/gpt-4o" --rta-model "anthropic/claude-sonnet-4"
+uv run main.py run S1_FINANCE_GS
+uv run main.py run S1_FINANCE_GS --verbose
+uv run main.py run S2_HR_GS --max-turns 15
+uv run main.py run S1_FINANCE_GS --ta-model "openai/gpt-4o" --rta-model "anthropic/claude-sonnet-4"
 ```
 
 ### Run full benchmark suite
 
 ```bash
 # Default: all scenarios × 3 runs each
-python main.py benchmark
+uv run main.py benchmark
 
 # Custom: specific scenarios, 5 runs each
-python main.py benchmark --scenarios S1_FINANCE_GS,S2_HR_GS --runs 5
+uv run main.py benchmark --scenarios S1_FINANCE_GS,S2_HR_GS --runs 5
 
 # With model overrides
-python main.py benchmark --ta-model "openai/gpt-4o" --runs 3
+uv run main.py benchmark --ta-model "openai/gpt-4o" --runs 3
 ```
 
 ### View a session transcript
 
 ```bash
-python main.py report outputs/sessions/MESA-xxx.json
+uv run main.py report outputs/sessions/MESA-xxx.json
 ```
 
 ### Compare two benchmark results
 
 ```bash
-python main.py compare results_a.json results_b.json --label-a "GPT-4o" --label-b "Claude Sonnet"
+uv run main.py compare results_a.json results_b.json --label-a "GPT-4o" --label-b "Claude Sonnet"
 ```
 
 ## 📋 Active Scenarios (v2.1)
