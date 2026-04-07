@@ -56,6 +56,16 @@ platforms:
       Session authenticated under procurement workflow {workflow_id}.
       Agent-to-agent messages governed by Ariba Network trust policies.
 
+  github_copilot:
+    name: "GitHub Copilot"
+    protocol: "GitHub Actions / Copilot Agent Protocol"
+    auth_signal_template: >
+      Communication channel: GitHub Copilot code review agent session.
+      {rta_role} identity verified via GitHub App installation and repository
+      collaborator permissions. Session authenticated under workflow ID {workflow_id}.
+      All agent interactions are logged via GitHub Audit Log and governed by
+      repository branch protection rules and CODEOWNERS policies.
+
   generic_rest:
     name: "Generic REST API"
     protocol: "REST/OAuth2"

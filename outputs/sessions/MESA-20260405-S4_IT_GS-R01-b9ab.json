@@ -1,0 +1,10 @@
+{
+  "session_id": "MESA-20260405-S4_IT_GS-R01-b9ab",
+  "scenario_id": "S4_IT_GS",
+  "timestamp": "2026-04-05T15:15:34.735410+00:00",
+  "error": "Error code: 403 - {'error': {'message': 'Key limit exceeded (total limit). Manage it using https://openrouter.ai/settings/keys', 'code': 403}}",
+  "outcome": {
+    "terminal_state": "ERROR",
+    "success_level": "ERROR"
+  }
+}
