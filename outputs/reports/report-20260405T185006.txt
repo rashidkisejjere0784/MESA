@@ -6,6 +6,8 @@ Generated:      2026-04-05T18:50:06.364967+00:00
 Total Sessions: 18
 Valid Sessions: 18
 Error Sessions: 0
+RTA Agent: sonnet 4.5
+TA Agent: Qwen-3-45B
 
 ----------------------------------------
 AGGREGATE SUMMARY
